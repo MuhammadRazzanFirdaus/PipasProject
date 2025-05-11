@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zann - Galeri | Seni Tradisional Cisarua</title>
+    <meta name="description" content="Galeri seni tradisional Cisarua, menampilkan karya-karya seni yang merayakan budaya Sunda." />
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Zann - Galeri Seni Tradisional Cisarua" />
+    <meta property="og:description" content="Jelajahi galeri seni tradisional Cisarua." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1603656034240-c115e6f29ec9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#7B4B3A" />
+    <!-- Fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/196/196510.png" type="image/png" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- CSS Murni -->
+    <style>
+        :root {
+            --brown: #7B4B3A;
+            --beige: #F1E6DC;
+            --forest-green: #2E5D4F;
+            --accent-green: #3A7F58;
+            --text-dark: #2C2C2C;
+            --highlight-orange: #E07B39;
+        }
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Crimson Pro', serif;
+            letter-spacing: 0.05em;
+            color: var(--brown);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+            margin: 5rem auto;
+            max-width: 1100px;
+        }
+        .gallery-item {
+            background-color: white;
+            border-radius: 18px;
+            padding: 1rem;
+            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.12);
+            transition: box-shadow 0.3s ease, transform 0.25s ease;
+            cursor: pointer;
+            border: 1px solid var(--forest-green);
+        }
+        .gallery-item:hover {
+            box-shadow: 0 20px 30px rgba(224, 123, 57, 0.4);
+            border-color: var(--highlight-orange);
+            transform: translateY(-6px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            border-radius: 14px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid var(--forest-green);
+            transition: border-color 0.3s ease;
+        }
+        .gallery-item:hover img {
+            border-color: var(--accent-green);
+        }
+        
+.social a i {
+  font-size: 30px;
+}
+
+.social i {
+  color: #810000;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+
+.social i:hover {
+  color: #ce1212;
+  transform: rotate(360deg);
+}
+
+.fa-brands {
+  size: 30px;
+}
+
+footer {
+  background-color: var(--beige);
+  color: #ce1212;
+  padding: 40px 20px;
+}
+
+footer div {
+  max-width: 1200px;
+  margin: auto;
+}
+
+footer h3 {
+  margin-bottom: 15px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #ce1212;
+  text-decoration: none;
+}
+
+.Footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Fcop {
+  text-align: center;
+}
+#backToTop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--highlight-orange);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 5px 15px rgba(224, 123, 57, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background-color 0.3s ease;
+  color: var(--beige);
+  font-size: 28px;
+}
+
+#backToTop:hover,
+#backToTop:focus {
+  background-color: var(--accent-green);
+  outline: none;
+  box-shadow: 0 6px 20px rgba(58, 127, 88, 0.9);
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #5C3A21; padding: 1rem 0;">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="index.html">
+                               <img src="img/logo.png" alt="Logo" width="34" height="34" class="me-2"> Seni Cisarua
+            </a>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn" href="index.html"><span>Beranda</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn" href="kesenian.html"><span>Kesenian</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn" href="budaya.html"><span>Budaya</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn" href="kontak.html"><span>Kontak</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="gallery" aria-label="Galeri Seni Tradisional Cisarua" data-aos="fade-up">
+        <h1 class="text-center my-5">Galeri Seni Tradisional Cisarua</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item" tabindex="0" aria-label="Kerajinan Rajutan">
+                <img src="img/Rajut.jpeg" alt="Kerajinan Rajutan" />
+                <h5>Kerajinan Rajutan</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Seni Pertunjukan Goong Renteng">
+                <img src="img/Goong.jpg" alt="Seni Pertunjukan Goong Renteng" />
+                <h5>Seni Pertunjukan Goong Renteng</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Tari Panarat">
+                <img src="img/Tari.jpg" alt="Tari Panarat" />
+                <h5>Tari Panarat</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Patung Dewi Kencana">
+                <img src="img/patung.jpeg" alt="Patung Dewi Kencana" />
+                <h5>Patung Dewi Kencana</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Pencak Silat Cimande">
+                <img src="img/silat.jpg" alt="Pencak Silat Cimande" />
+                <h5>Pencak Silat Cimande</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Tari Jaipong dan Angklung">
+                <img src="img/jaipong.JPG" alt="Tari Jaipong dan Angklung" />
+                <h5>Tari Jaipong dan Angklung</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Sarung Tenun Tradisional">
+                <img src="img/tenun.jpg" alt="Sarung Tenun Tradisional" />
+                <h5>Sarung Tenun Tradisional</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Karinding">
+                <img src="img/Karinding.jpeg" alt="Karinding" />
+                <h5>Karinding</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Tarawangsa">
+                <img src="img/Tarawangsa.jpeg" alt="Tarawangsa" />
+                <h5>Tarawangsa</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Puncak Culture Session">
+                <img src="img/puncak.jpeg" alt="Puncak Culture Session" />
+                <h5>Puncak Culture Session</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Sanggar Seni Studio Seni Indonesia (SSI)">
+                <img src="img/sanggar.jpeg" alt="Sanggar Seni Studio Seni Indonesia (SSI)" />
+                <h5>Sanggar Seni Studio Seni Indonesia (SSI)</h5>
+            </div>
+            <div class="gallery-item" tabindex="0" aria-label="Kerajinan Bambu Cisarua">
+                <img src="img/bambu.jpeg" alt="Kerajinan Bambu Cisarua" />
+                <h5>Kerajinan Bambu Cisarua</h5>
+            </div>
+        </div>
+    </section>
+
+    <button id="backToTop" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+
+    <footer>
+        <div class="Footer">
+            <div>
+                <h3>Contact</h3>
+                <ul class="Fcont">
+                    <li><span>📞</span> +62 857-7109-3208 (Fara)</li>
+                    <li><span>✉</span> daffahibbangunawan@smkwikrama.sch.id</li>
+                    <li><span>📍</span> Indonesia</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Social Media</h3>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/muhammad-razzan-firdaus-92a09a331/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/xfour.pplg__/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@shiikarikato" target="_blank">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="Fcop">
+            <p>Copyright © CissThree & CissFour</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+        });
+
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.style.display = 'flex';
+            else backToTopBtn.style.display = 'none';
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        const navLinks = document.querySelectorAll('nav.navbar .nav-link');
+        navLinks.forEach(link => {
+            if (link.href.includes(location.pathname.split("/").pop())) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+            }
+        });
+    </script>
+</body>
+</html>
+
