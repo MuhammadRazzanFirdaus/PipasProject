@@ -388,14 +388,14 @@ a:focus {
 }
 
 .social i {
-  color: #810000;
+  color: var(--beige);
   font-size: 18px;
   margin-right: 10px;
   transition: 0.5s;
 }
 
 .social i:hover {
-  color: #ce1212;
+  color: var(--beige);
   transform: rotate(360deg);
 }
 
@@ -404,8 +404,8 @@ a:focus {
 }
 
 footer {
-  background-color: var(--beige);
-  color: #ce1212;
+  background-color: var(--brown);
+  color: var(--beige);
   padding: 40px 20px;
 }
 
@@ -428,7 +428,7 @@ footer ul li {
 }
 
 footer a {
-  color: #ce1212;
+  color: var(--beige);
   text-decoration: none;
 }
 
@@ -442,6 +442,10 @@ footer a {
 
 .Fcop {
   text-align: center;
+}
+
+footer h3{
+  color: var(--beige);
 }
 
 @media (max-width: 991px) {
