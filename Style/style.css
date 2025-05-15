@@ -383,6 +383,10 @@ a:focus {
   box-shadow: 0 6px 20px rgba(58, 127, 88, 0.9);
 }
 
+.social{
+  margin-left: 30px;
+}
+
 .social a i {
   font-size: 30px;
 }
@@ -395,7 +399,7 @@ a:focus {
 }
 
 .social i:hover {
-  color: var(--beige);
+  color: var(--highlight-orange);
   transform: rotate(360deg);
 }
 
