@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zann - Galeri | Seni Tradisional Cisarua</title>
+    <meta name="description"
+        content="Galeri seni tradisional Cisarua, menampilkan karya-karya seni yang merayakan budaya Sunda." />
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Zann - Galeri Seni Tradisional Cisarua" />
+    <meta property="og:description" content="Jelajahi galeri seni tradisional Cisarua." />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1603656034240-c115e6f29ec9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#7B4B3A" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- CSS Murni -->
+    <style>
+        :root {
+            --brown: #7B4B3A;
+            --beige: #F1E6DC;
+            --forest-green: #2E5D4F;
+            --accent-green: #3A7F58;
+            --text-dark: #2C2C2C;
+            --highlight-orange: #E07B39;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            background-attachment: fixed;
+        }
+
+        .nav-btn {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid #fff;
+            transition: color 0.3s ease;
+        }
+
+        .nav-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background-color: #f2e1c2;
+            transition: width 0.4s ease;
+            z-index: 0;
+        }
+
+        .nav-btn:hover::before {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
+
+        .nav-btn span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .nav-btn:hover span {
+            color: #5C3A21;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            color: var(--brown);
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 8px 24px var(--card-shadow);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 48px var(--card-shadow);
+        }
+
+        /* Anggota Tim Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .team-member {
+            background-color: var(--beige);
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+            transition: transform var(--transition-time) ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--forest-green);
+        }
+
+        .team-member h4 {
+            margin: 0.5rem 0 0.25rem;
+            color: var(--forest-green);
+        }
+
+        .team-member p {
+            font-size: 0.95rem;
+            color: var(--brown);
+            margin-bottom: 0;
+        }
+
+        /* Testimoni */
+        .testimonial {
+            font-style: italic;
+            border-left: 5px solid var(--highlight-orange);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            background: #fff9f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(224, 123, 57, 0.15);
+        }
+
+        .testimonial strong {
+            color: var(--highlight-orange);
+        }
+
+        /* Responsive typography */
+        @media (max-width: 576px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .card {
+                padding: 1.5rem 1rem;
+            }
+
+            p,
+            ul {
+                font-size: 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .social {
+            margin-left: 30px;
+        }
+
+        .social a i {
+            font-size: 30px;
+        }
+
+        .social i {
+            color: var(--beige);
+            font-size: 18px;
+            margin-right: 10px;
+            transition: 0.5s;
+        }
+
+        .social i:hover {
+            color: var(--highlight-orange);
+            transform: rotate(360deg);
+        }
+
+        .fa-brands {
+            size: 30px;
+        }
+
+        footer {
+            background-color: var(--brown);
+            color: var(--beige);
+            padding: 40px 20px;
+        }
+
+        footer div {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--beige);
+            text-decoration: none;
+        }
+
+        .Footer {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .Fcop {
+            text-align: center;
+        }
+
+        footer h3 {
+            color: var(--beige);
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--highlight-orange);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 5px 15px rgba(224, 123, 57, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1100;
+            transition: background-color 0.3s ease;
+            color: var(--beige);
+            font-size: 28px;
+        }
+
+        #backToTop:hover,
+        #backToTop:focus {
+            background-color: var(--accent-green);
+            outline: none;
+            box-shadow: 0 6px 20px rgba(58, 127, 88, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #5C3A21; padding: 1rem 0;">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="Logo" width="34" height="34" class="me-2"> Seni Cisarua
+            </a>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn"
+                            href="index.html"><span>Beranda</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn"
+                            href="kesenian.html"><span>Kesenian</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn"
+                            href="budaya.html"><span>Budaya</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4 py-2 rounded-pill nav-btn"
+                            href="kontak.html"><span>Kontak</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" role="main" aria-label="Halaman About Seni Tradisional Cisarua">
+
+        <!-- Siapa Kami -->
+        <section class="card" aria-labelledby="judul-siapa-kami">
+            <h1 id="judul-siapa-kami">👋 Siapa Kami?</h1>
+            <p><strong>Seni Cisarua</strong> adalah platform digital yang menyajikan kekayaan budaya dan seni khas
+                Cisarua, Jawa Barat. Dari kerajinan tangan, seni lukis, hingga pertunjukan tradisional — semua terangkum
+                dalam satu tempat.</p>
+        </section>
+
+        <!-- Visi & Misi -->
+        <section class="card" aria-labelledby="judul-visi-misi">
+            <h2 id="judul-visi-misi">🎯 Visi & Misi Kami</h2>
+            <div>
+                <h3>Visi</h3>
+                <p>Menjadi pusat informasi seni budaya lokal yang edukatif, interaktif, dan inspiratif.</p>
+            </div>
+            <div class="Misi">
+                <h3>Misi</h3>
+                <ul>
+                    <li>Mempromosikan karya seniman lokal</li>
+                    <li>Mengedukasi masyarakat tentang budaya daerah</li>
+                    <li>Menjalin kolaborasi antar pelaku seni</li>
+                    <li>Menghadirkan seni tradisional ke era digital</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kenapa Cisarua -->
+        <section class="card" aria-labelledby="judul-kenapa-cisarua">
+            <h2 id="judul-kenapa-cisarua">🏞️ Kenapa Cisarua?</h2>
+            <p>Cisarua bukan hanya dikenal karena keindahan alamnya, tetapi juga karena seni budayanya yang hidup dan
+                berkembang. Dari tarian tradisional hingga ukiran kayu yang unik, setiap karya memiliki cerita yang
+                berharga untuk dibagikan.</p>
+        </section>
+
+        <!-- Anggota Tim -->
+        <section class="card" aria-labelledby="judul-anggota-tim">
+            <h2 id="judul-anggota-tim">👥 Anggota Tim Kami</h2>
+            <div class="team-grid" role="list">
+                <article class="team-member" role="listitem" tabindex="0">
+                    <img src="https://i.pravatar.cc/100?img=1" alt="Foto Anggota Tim: Ani Rahmawati" />
+                    <h4>Ani Rahmawati</h4>
+                    <p>Founder & Kurator Seni</p>
+                </article>
+                <article class="team-member" role="listitem" tabindex="0">
+                    <img src="https://i.pravatar.cc/100?img=2" alt="Foto Anggota Tim: Budi Santoso" />
+                    <h4>Budi Santoso</h4>
+                    <p>Desainer Grafis & Konten Kreator</p>
+                </article>
+                <article class="team-member" role="listitem" tabindex="0">
+                    <img src="https://i.pravatar.cc/100?img=3" alt="Foto Anggota Tim: Clara Dewi" />
+                    <h4>Clara Dewi</h4>
+                    <p>Manajer Media Sosial</p>
+                </article>
+                <article class="team-member" role="listitem" tabindex="0">
+                    <img src="https://i.pravatar.cc/100?img=4" alt="Foto Anggota Tim: Dedi Wijaya" />
+                    <h4>Dedi Wijaya</h4>
+                    <p>Pengembang Web</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimoni -->
+        <section class="card" aria-labelledby="judul-testimoni">
+            <h2 id="judul-testimoni">💬 Testimoni</h2>
+            <blockquote class="testimonial" tabindex="0" aria-label="Testimoni dari Siti Nurhaliza">
+                <p><strong>"Seni Cisarua benar-benar membuka mata saya tentang kekayaan budaya daerah. Situs yang mudah
+                        digunakan dan konten yang sangat menarik!"</strong></p>
+                <footer>– Siti Nurhaliza</footer>
+            </blockquote>
+
+            <blockquote class="testimonial" tabindex="0" aria-label="Testimoni dari Agus Salim">
+                <p><strong>"Saya sangat terinspirasi oleh kreativitas dan semangat tim Seni Cisarua. Terus maju dan
+                        sukses!"
+                    </strong></p>
+                <footer>– Agus Salim</footer>
+            </blockquote>
+
+            <blockquote class="testimonial" tabindex="0" aria-label="Testimoni dari Lestari Dewi">
+                <p><strong>"Kontennya lengkap dan dikemas dengan sangat menarik. Sangat membantu untuk mengenal seni
+                        tradisional
+                        kita."</strong></p>
+                <footer>– Lestari Dewi</footer>
+            </blockquote>
+        </section>
+
+    </main>
+
+        <button id="backToTop" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+
+        <footer>
+            <div class="Footer">
+                <div>
+                    <h3>Contact</h3>
+                    <ul class="Fcont">
+                        <li><span>📞</span> +62 857-7109-3208 (Fara)</li>
+                        <li><span>✉</span> daffahibbangunawan@smkwikrama.sch.id</li>
+                        <li><span>📍</span> Indonesia</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Social Media</h3>
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/muhammad-razzan-firdaus-92a09a331/" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/xfour.pplg__/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@shiikarikato" target="_blank">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="Fcop">
+                <p>Copyright © CissThree & CissFour</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script src="script/scriptgalery.js"></script>
+</body>
+
+</html>
