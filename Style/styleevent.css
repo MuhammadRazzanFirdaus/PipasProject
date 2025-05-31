@@ -1,19 +1,10 @@
 :root {
-  --brown: #7B4B3A;
-  --beige: #F1E6DC;
-  --forest-green: #2E5D4F;
-  --accent-green: #3A7F58;
-  --text-dark: #2C2C2C;
-  --highlight-orange: #E07B39;
-}
-
-body {
-  background-color: var(--beige);
-  color: var(--text-dark);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  /* padding-top: 3rem;
-  padding-bottom: 3rem; */
+    --brown: #7B4B3A;
+    --beige: #F1E6DC;
+    --forest-green: #2E5D4F;
+    --accent-green: #3A7F58;
+    --text-dark: #2C2C2C;
+    --highlight-orange: #E07B39;
 }
 
 .nav-btn {
@@ -55,60 +46,80 @@ body {
 }
 
 
+body {
+    background-color: var(--beige);
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
 h1 {
-  color: var(--brown);
-  font-size: 3rem;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-  color: var(--forest-green);
-  font-size: 2.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--highlight-orange);
-  padding-bottom: 0.5rem;
+    color: var(--forest-green);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
-p {
-  font-size: 1.125rem;
-  margin-bottom: 1.25rem;
+.banner {
+    background-image: url('https://via.placeholder.com/1200x400?text=Cultural+Events+in+Cisarua');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
 
-.section-image {
-  max-width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
-.team-member {
-  text-align: center;
-  margin-bottom: 2rem;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.team-member img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 1rem;
+.card-header {
+    background-color: var(--forest-green);
+    color: white;
+    font-weight: 600;
 }
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-#testimonials {
-  margin-bottom: 3rem;
+.featured-event {
+    margin-bottom: 2rem;
+}
+
+.cta-box {
+    background-color: var(--accent-green);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.filter {
+    margin-bottom: 2rem;
 }
 
 /* Back to top button */
@@ -209,15 +220,7 @@ footer h3 {
 }
 
 @media (max-width: 576px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
+    h1 {
     font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
+    }
 }
