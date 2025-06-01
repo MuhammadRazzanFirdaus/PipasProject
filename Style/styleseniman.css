@@ -1,17 +1,10 @@
 :root {
-    --brown: #7B4B3A;
-    --beige: #F1E6DC;
-    --forest-green: #2E5D4F;
-    --accent-green: #3A7F58;
-    --text-dark: #2C2C2C;
-    --highlight-orange: #E07B39;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--beige);
-    color: var(--text-dark);
-    scroll-behavior: smooth;
+  --brown: #7B4B3A;
+  --beige: #F1E6DC;
+  --forest-green: #2E5D4F;
+  --accent-green: #3A7F58;
+  --text-dark: #2C2C2C;
+  --highlight-orange: #E07B39;
 }
 
 .nav-btn {
@@ -52,139 +45,145 @@ body {
   color: #5C3A21;
 }
 
-h1, h2, h3 {
-    color: var(--brown);
-    text-align: center;
-    margin-bottom: 1rem;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--beige);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
 }
 
-.coba{
+.coba {
   text-align: center;
 }
 
 .artist-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    overflow: hidden;
-    margin-bottom: 2rem; /* Add margin to separate cards */
-    height: 350px; /* Set a fixed height for cards */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  /* Add margin to separate cards */
+  height: 350px;
+  /* Set a fixed height for cards */
 }
 
 .artist-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .artist-photo {
-    background-position: center;
-    background-size: cover;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    margin: 1rem auto;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: 1rem auto;
 }
 
 .artist-details {
-            display: none;
-            transition: all 0.3s ease-in-out;
-        }
-        .artist-details.open {
-            display: block;
-            margin-top: 10px;
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-radius: 8px;
-        }
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.artist-details.open {
+  display: block;
+  margin-top: 10px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
 
 .info-section {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    margin-top: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .fact-card {
-    background: var(--highlight-orange);
-    color: white;
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 1rem 0;
-    transition: transform 0.3s;
+  background: var(--highlight-orange);
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  transition: transform 0.3s;
 }
 
 .fact-card:hover {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .quiz-section {
-    margin-top: 2rem;
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .social-media {
-    margin-top: 2rem;
-    text-align: center;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .social-media a {
-    margin: 0 10px;
-    font-size: 1.5rem;
-    color: var(--brown);
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: var(--brown);
 }
 
 .feedback {
-    margin-top: 1rem;
-    font-weight: bold;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 
 .btn-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .btn-container button {
-    width: 100%;
-    max-width: 300px; /* Set a max width for buttons */
-    margin: 0.5rem 0; /* Space between buttons */
+  width: 100%;
+  max-width: 300px;
+  /* Set a max width for buttons */
+  margin: 0.5rem 0;
+  /* Space between buttons */
 }
 
 #backToTop {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background-color: var(--highlight-orange);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    box-shadow: 0 5px 15px rgba(224, 123, 57, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1100;
-    transition: background-color 0.3s ease;
-    color: var(--beige);
-    font-size: 28px;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--highlight-orange);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 5px 15px rgba(224, 123, 57, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background-color 0.3s ease;
+  color: var(--beige);
+  font-size: 28px;
 }
 
 #backToTop:hover,
 #backToTop:focus {
-    background-color: var(--accent-green);
-    outline: none;
-    box-shadow: 0 6px 20px rgba(58, 127, 88, 0.9);
+  background-color: var(--accent-green);
+  outline: none;
+  box-shadow: 0 6px 20px rgba(58, 127, 88, 0.9);
 }
 
-.social{
+.social {
   margin-left: 30px;
 }
 
@@ -249,13 +248,13 @@ footer a {
   text-align: center;
 }
 
-footer h3{
+footer h3 {
   color: var(--beige);
 }
 
 
 @media (min-width: 768px) {
-    .artist-card {
-        margin: 1rem; /* Adjust margin for larger screens */
-    }
+  .artist-card {
+    margin: 1rem;
+  }
 }
