@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 :root {
     --brown: #7B4B3A;
     --beige: #F1E6DC;
