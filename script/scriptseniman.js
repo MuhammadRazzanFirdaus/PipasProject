@@ -1,8 +1,17 @@
-function toggleDetails(card) {
-    const details = card.querySelector('.artist-details');
-    const isOpen = details.classList.contains('open');
-    details.classList.toggle('open', !isOpen);
-}
+  document.querySelectorAll('.artist-card').forEach(card => {
+       card.addEventListener('click', () => toggleDetails(card));
+   });
+   function toggleDetails(card) {
+       const details = card.querySelector('.artist-details');
+       console.log('Toggling details for:', card); // Debugging
+       if (details) {
+           details.classList.toggle('open'); // Menambahkan atau menghapus kelas 'open'
+           console.log('Details class list:', details.classList); // Debugging
+       } else {
+           console.error('Details element not found'); // Jika elemen tidak ditemukan
+       }
+   }
+   
 
 const quizData = [
     {
